@@ -202,17 +202,14 @@ This project is private and proprietary.
 
 ## 📸 Screenshots
 
-### Landing Page
-<img src="./screenshots/landing-page.png" width="300">
+<img src="./screenshots/Landing-Page.png" width="300">
 
-### Appointment Booking Form
-<img src="./screenshots/booking-form.png" width="300">
+<img src="./screenshots/Create_Dcortor_Profile.png" width="300">
 
-### Pet Profile Management
-<img src="./screenshots/pet-profile.png" width="300">
+<img src="./screenshots/Dcortor_appointment.png" width="300">
 
-### Appointment Dashboard
-<img src="./screenshots/dashboard.png" width="300">
+<img src="./screenshots/Dcortor_Dashboeard" width="300">
 
-### Veterinarian Schedule
-<img src="./screenshots/vet-schedule.png" width="300">
+<img src="./screenshots/Manage_Schedule.png" width="300">
+
+<img src="./screenshots/User_Book_Appointment.png" width="300">
