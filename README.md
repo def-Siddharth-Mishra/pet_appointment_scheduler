@@ -42,6 +42,9 @@ src/
 └── utils/              # Utility functions and constants
 ```
 
+
+
+
 ## Getting Started
 
 > **Note**: Make sure you have completed the [React Native Environment Setup](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
@@ -195,4 +198,21 @@ cd android && ./gradlew clean
 
 ## License
 
-This project is private and proprietary.p# pet_appointment_scheduler
+This project is private and proprietary.
+
+## 📸 Screenshots
+
+### Landing Page
+![Landing page showing the main interface](./screenshots/landing-page.png)
+
+### Appointment Booking Form
+![Appointment booking interface with calendar](./screenshots/booking-form.png)
+
+### Pet Profile Management
+![Pet profile creation and management screen](./screenshots/pet-profile.png)
+
+### Appointment Dashboard
+![Dashboard showing all scheduled appointments](./screenshots/dashboard.png)
+
+### Veterinarian Schedule
+![Vet scheduling and availability view](./screenshots/vet-schedule.png)
