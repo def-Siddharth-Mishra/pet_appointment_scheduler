@@ -1,9 +1,13 @@
-import React from 'react';
-import App from '../app';
-import '@testing-library/jest-dom/extend-expect';
+/**
+ * @format
+ */
 
-describe('App', () => {
-  it('renders without crashing', () => {
-    <App />;
+import React from 'react';
+import ReactTestRenderer from 'react-test-renderer';
+import App from '../App';
+
+test('renders correctly', async () => {
+  await ReactTestRenderer.act(() => {
+    ReactTestRenderer.create(<App />);
   });
 });
