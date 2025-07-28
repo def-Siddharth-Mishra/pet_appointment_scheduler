@@ -208,7 +208,7 @@ This project is private and proprietary.
 
 <img src="./screenshots/Dcortor_appointment.png" width="300">
 
-<img src="./screenshots/Dcortor_Dashboeard" width="300">
+<img src="./screenshots/Dcortor_Dashboard.png" width="300">
 
 <img src="./screenshots/Manage_Schedule.png" width="300">
 
