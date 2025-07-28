@@ -203,16 +203,16 @@ This project is private and proprietary.
 ## 📸 Screenshots
 
 ### Landing Page
-![Landing page showing the main interface](./screenshots/landing-page.png)
+<img src="./screenshots/landing-page.png" width="300">
 
 ### Appointment Booking Form
-![Appointment booking interface with calendar](./screenshots/booking-form.png)
+<img src="./screenshots/booking-form.png" width="300">
 
 ### Pet Profile Management
-![Pet profile creation and management screen](./screenshots/pet-profile.png)
+<img src="./screenshots/pet-profile.png" width="300">
 
 ### Appointment Dashboard
-![Dashboard showing all scheduled appointments](./screenshots/dashboard.png)
+<img src="./screenshots/dashboard.png" width="300">
 
 ### Veterinarian Schedule
-![Vet scheduling and availability view](./screenshots/vet-schedule.png)
+<img src="./screenshots/vet-schedule.png" width="300">
