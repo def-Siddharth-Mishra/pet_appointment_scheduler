@@ -1,28 +1,35 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * Pet Appointment Scheduler App
+ * Main entry point for the React Native application
  *
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import React from 'react';
+import { StatusBar, useColorScheme } from 'react-native';
+import 'react-native-gesture-handler';
+
+// Import the root navigator and context provider
+import RootNavigator from './src/navigation/RootNavigator';
+import { AppProvider } from './src/context/AppContext';
+import { ErrorBoundary } from './src/components/shared/ErrorBoundary';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <ErrorBoundary
+      onError={(error, errorInfo) => {
+        // Log to crash reporting service in production
+        console.error('App crashed:', error, errorInfo);
+      }}
+    >
+      <AppProvider>
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        <RootNavigator />
+      </AppProvider>
+    </ErrorBoundary>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
