@@ -1,97 +1,198 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Pet Appointment Scheduler
 
-# Getting Started
+A comprehensive React Native application for managing veterinary appointments, built with TypeScript. This app supports both doctors and pet owners with separate user flows for schedule management and appointment booking.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Features
 
-## Step 1: Start Metro
+### For Doctors
+- Configure weekly schedules with available time slots
+- Set specializations and expertise areas
+- Manage appointments (view, cancel, reschedule)
+- Handle recurring schedule patterns
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### For Pet Owners
+- Browse and filter doctors by specialization
+- Book appointments with available doctors
+- Manage pet profiles and appointment history
+- Cancel and reschedule appointments
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## Tech Stack
 
-```sh
-# Using npm
-npm start
+- **React Native 0.80.2** - Cross-platform mobile development
+- **TypeScript** - Type-safe development
+- **React Navigation 7** - Navigation and routing
+- **AsyncStorage** - Local data persistence
+- **Jest** - Testing framework
 
-# OR using Yarn
-yarn start
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── shared/         # Components used across both user types
+│   ├── doctor/         # Doctor-specific components
+│   └── petOwner/       # Pet owner-specific components
+├── models/             # Data model classes with validation
+├── navigation/         # Navigation configuration and types
+├── screens/            # Screen components
+│   ├── doctor/         # Doctor flow screens
+│   └── petOwner/       # Pet owner flow screens
+├── services/           # Service interfaces and implementations
+├── types/              # TypeScript type definitions
+└── utils/              # Utility functions and constants
 ```
 
-## Step 2: Build and run your app
+## Getting Started
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+> **Note**: Make sure you have completed the [React Native Environment Setup](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
-### Android
+### Prerequisites
 
-```sh
-# Using npm
-npm run android
+- Node.js >= 18
+- React Native CLI
+- Android Studio (for Android development)
+- Xcode (for iOS development, macOS only)
 
-# OR using Yarn
-yarn android
+### Installation
+
+1. **Clone the repository and install dependencies:**
+
+```bash
+npm install
 ```
 
-### iOS
+2. **For iOS development, install CocoaPods dependencies:**
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
+```bash
+# Install Ruby bundler (first time only)
 bundle install
-```
 
-Then, and every time you update your native dependencies, run:
-
-```sh
+# Install CocoaPods dependencies
 bundle exec pod install
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+### Running the App
 
-```sh
-# Using npm
-npm run ios
+1. **Start the Metro bundler:**
 
-# OR using Yarn
-yarn ios
+```bash
+npm start
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+2. **Run on your target platform:**
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+**Android:**
+```bash
+npm run android
+```
 
-## Step 3: Modify your app
+**iOS:**
+```bash
+npm run ios
+```
 
-Now that you have successfully run the app, let's make changes!
+### Development Commands
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+```bash
+# Run tests
+npm test
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+# Run linter
+npm run lint
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+# Type checking
+npx tsc --noEmit
+```
 
-## Congratulations! :tada:
+## Core Data Models
 
-You've successfully run and modified your React Native App. :partying_face:
+### Doctor
+- Profile information (name, specializations, experience)
+- Weekly schedule configuration
+- Rating and language preferences
 
-### Now what?
+### Appointment
+- Doctor and pet owner association
+- Pet information and visit reason
+- Date/time and status tracking
+- Conflict resolution support
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+### Pet Owner
+- Contact information
+- Multiple pet profiles
+- Appointment history
 
-# Troubleshooting
+## Key Features Implementation
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+### Local-First Architecture
+- All data persisted using AsyncStorage
+- Offline-capable with data synchronization
+- Optimistic UI updates with rollback support
 
-# Learn More
+### Conflict Resolution
+- Timestamp-based priority for simultaneous bookings
+- Automatic availability updates
+- User-friendly error handling
 
-To learn more about React Native, take a look at the following resources:
+### Type Safety
+- Comprehensive TypeScript interfaces
+- Runtime validation for data models
+- Type-safe navigation parameters
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## Development Guidelines
+
+### Code Organization
+- Feature-based folder structure
+- Separation of concerns between UI and business logic
+- Reusable components with clear interfaces
+
+### Data Flow
+- Centralized state management
+- Service layer abstraction
+- Consistent error handling patterns
+
+### Testing Strategy
+- Unit tests for models and utilities
+- Integration tests for services
+- Component testing with React Native Testing Library
+
+## Troubleshooting
+
+### Common Issues
+
+**Metro bundler issues:**
+```bash
+# Clear Metro cache
+npx react-native start --reset-cache
+```
+
+**iOS build issues:**
+```bash
+# Clean and reinstall pods
+cd ios && rm -rf Pods Podfile.lock && bundle exec pod install
+```
+
+**Android build issues:**
+```bash
+# Clean Android build
+cd android && ./gradlew clean
+```
+
+### Development Tips
+
+- Use React Native Debugger for debugging
+- Enable Fast Refresh for rapid development
+- Use TypeScript strict mode for better type safety
+- Test on both platforms regularly
+
+## Contributing
+
+1. Follow the existing code style and patterns
+2. Add tests for new features
+3. Update documentation as needed
+4. Ensure TypeScript compilation passes
+5. Test on both iOS and Android platforms
+
+## License
+
+This project is private and proprietary.p# pet_appointment_scheduler
